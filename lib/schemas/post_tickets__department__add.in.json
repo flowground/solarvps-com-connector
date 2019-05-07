@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "department": {
+            "required": true,
+            "type": "string"
+        },
+        "subject": {
+            "required": true,
+            "type": "string"
+        },
+        "contents": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

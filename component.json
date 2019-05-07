@@ -1,0 +1,377 @@
+{
+    "title": "Solar VPS",
+    "description": "This is the Solar VPS Public API. You can find more at http://www.solarvps.com",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/solarvps.com/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://api.ss.solarvps.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "apiKey": {
+                "label": "api_key (apiKey)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_contacts": {
+            "main": "./lib/actions/get_contacts.js",
+            "title": "View all contacts under your account",
+            "description": "Shows all contacts under the client account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_contacts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_dns__domain_": {
+            "main": "./lib/actions/get_dns__domain_.js",
+            "title": "View all your records for a given domain",
+            "description": "Shows all your records for a specific domain. You can try example.com below.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_dns__domain_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_dns__domain__add": {
+            "main": "./lib/actions/post_dns__domain__add.js",
+            "title": "Add dns record for given domain",
+            "description": "You can try example.com below. Types allowed are: A CNAME NS TXT MX SRV SPF",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_dns__domain__add.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_dns__domain__delete": {
+            "main": "./lib/actions/post_dns__domain__delete.js",
+            "title": "Delete dns record for a given domain",
+            "description": "Shows all your records for a specific domain. You can try example.com below.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_dns__domain__delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_dns__domain__update": {
+            "main": "./lib/actions/post_dns__domain__update.js",
+            "title": "Update dns record for a given domain",
+            "description": "You can try example.com below.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_dns__domain__update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_domains": {
+            "main": "./lib/actions/get_domains.js",
+            "title": "View all your domains managed by SolarVPS Distributed DNS",
+            "description": "Shows all your domains",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_domains.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_domains_add": {
+            "main": "./lib/actions/post_domains_add.js",
+            "title": "Add domain to be managed by SolarVPS Distributed DNS",
+            "description": "Adds domain to SolarVPS Distributed DNS",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_domains_add.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_domains_delete": {
+            "main": "./lib/actions/post_domains_delete.js",
+            "title": "Delete domain from SolarVPS Distributed DNS",
+            "description": "Deletes domain from SolarVPS Distributed DNS",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_domains_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_key_generate": {
+            "main": "./lib/actions/get_key_generate.js",
+            "title": "Generate API Key",
+            "description": "API Key is regenerated if it already exists",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_key_generate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_key_get": {
+            "main": "./lib/actions/get_key_get.js",
+            "title": "Get API Key",
+            "description": "Gets the API Key for user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_key_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_pods": {
+            "main": "./lib/actions/get_pods.js",
+            "title": "View all your pods",
+            "description": "Shows all your pods",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_pods.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_pods__podId_": {
+            "main": "./lib/actions/get_pods__podId_.js",
+            "title": "View information on a specific pod",
+            "description": "Shows details of a specific pod. Enter 1 below to see an example",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_pods__podId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_pods__podId__ping": {
+            "main": "./lib/actions/get_pods__podId__ping.js",
+            "title": "Ping your specified pod",
+            "description": "Returns the ping response from your server.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_pods__podId__ping.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_pods__podId___action_": {
+            "main": "./lib/actions/get_pods__podId___action_.js",
+            "title": "Perform action on a specific pod",
+            "description": "Allowed actions are reboot, shutdown, boot",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_pods__podId___action_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_solarray": {
+            "main": "./lib/actions/get_solarray.js",
+            "title": "View all your monitors",
+            "description": "Shows all your monitors",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_solarray.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_solarray_critical": {
+            "main": "./lib/actions/get_solarray_critical.js",
+            "title": "View all your critical notifications",
+            "description": "Shows all your critical notifications",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_solarray_critical.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tickets": {
+            "main": "./lib/actions/get_tickets.js",
+            "title": "View all your tickets",
+            "description": "Shows all your tickets",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tickets.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_tickets__department__add": {
+            "main": "./lib/actions/post_tickets__department__add.js",
+            "title": "Open ticket with desired department",
+            "description": "Available departments are support, billing, sales",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_tickets__department__add.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_tickets__ticketId_": {
+            "main": "./lib/actions/get_tickets__ticketId_.js",
+            "title": "View details on a specific ticket",
+            "description": "Shows all information of a specific ticketId",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_tickets__ticketId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_tickets__ticketid__update": {
+            "main": "./lib/actions/post_tickets__ticketid__update.js",
+            "title": "Post a reply to a ticket",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_tickets__ticketid__update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

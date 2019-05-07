@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "domain": {
+            "required": true,
+            "type": "string"
+        },
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "type": {
+            "required": true,
+            "type": "string"
+        },
+        "content": {
+            "required": true,
+            "type": "string"
+        },
+        "ttl": {
+            "required": true,
+            "type": "string"
+        },
+        "prio": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

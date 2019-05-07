@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "podId": {
+            "required": true,
+            "type": "number"
+        },
+        "action": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

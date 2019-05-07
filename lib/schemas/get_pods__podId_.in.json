@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "podId": {
+            "required": true,
+            "type": "number"
+        }
+    }
+}
